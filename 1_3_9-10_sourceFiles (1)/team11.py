@@ -6,10 +6,11 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
-    
+team_name = 'query5' # Only 10 chars displayed.
+strategy_name = 'brain bot'
+strategy_description = 'test and decide'
+global times
+times = 0   
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
@@ -26,7 +27,33 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    bot1 = 'bbb',
+    bot2 = 'ccc',
+    bot3 = 'cbb',
+    bot4 = 'cbc',
+    bot5 = 'ccb',
+    bot6 = 'bbc',
+    bot7 = 'bcb'
+    bot8 = 'bcc'
+    global times
+    
+    while times < 3:
+        return 'b'
+        times = times + 1
+    if their_history[0,1,2] == bot1 or their_history[0,1,2] == bot3 and times ==3:
+        return 'c'
+        times = times + 1
+    elif their_history[0,1,2] == bot1 or their_history[0,1,2] == bot3 and times ==4:
+        return 'b'
+        times = times + 1
+    else:
+        times = 7
+    if their_history[1,2,3,4] == my_history[0,1,2,3]:
+        return 'c'
+    else:
+        return 'b'
+    
+            
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
